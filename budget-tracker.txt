@@ -1,0 +1,26 @@
+==================================================
+            MONTHLY BUDGET TRACKER
+==================================================
+Month: ____________________
+
+[+] ESTIMATED MONTHLY INCOME
+Source 1: $________________
+Source 2: $________________
+TOTAL INCOME: $___________
+
+[-] MONTHLY FIXED EXPENSES (Housing, Bills)
+1. Rent/Mortgage: $________   [ ] Paid
+2. Electricity/Water: $____   [ ] Paid
+3. Internet/Phone: $_______   [ ] Paid
+4. Insurance: $____________   [ ] Paid
+
+[-] MONTHLY VARIABLE EXPENSES (Spending)
+1. Groceries: $____________
+2. Transport/Fuel: $_______
+3. Entertainment: $________
+4. Emergency Fund: $_______
+
+==================================================
+TOTAL SPENT: $____________
+NET SAVINGS (Income minus Expenses): $___________
+==================================================
