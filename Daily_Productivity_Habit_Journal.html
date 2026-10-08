@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daily Productivity & Habit Journal</title>
+  <style>
+    :root {
+      --ink: #24313a;
+      --muted: #687782;
+      --accent: #287c72;
+      --line: #d9e2e4;
+      --soft: #f1f7f6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 32px 16px;
+      background: #eef2f3;
+      color: var(--ink);
+      font: 15px/1.45 Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 800px;
+      min-height: 1050px;
+      margin: auto;
+      padding: 38px;
+      background: white;
+      box-shadow: 0 4px 22px #182b3518;
+    }
+
+    header {
+      padding-bottom: 20px;
+      border-bottom: 3px solid var(--accent);
+    }
+
+    h1 {
+      margin: 0 0 5px;
+      font-size: 28px;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle { margin: 0; color: var(--muted); }
+
+    .date-row {
+      display: flex;
+      gap: 28px;
+      margin-top: 22px;
+    }
+
+    .write-line {
+      flex: 1;
+      min-height: 27px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .write-line span { color: var(--muted); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    section {
+      padding: 17px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      break-inside: avoid;
+    }
+
+    h2 {
+      margin: 0 0 13px;
+      color: var(--accent);
+      font-size: 17px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      min-height: 29px;
+    }
+
+    .box {
+      width: 15px;
+      height: 15px;
+      flex: 0 0 15px;
+      border: 1.5px solid #829398;
+      border-radius: 3px;
+    }
+
+    .intention {
+      margin-top: 14px;
+      padding: 12px;
+      background: var(--soft);
+      border-radius: 7px;
+    }
+
+    .blank {
+      height: 27px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .priority {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      align-items: end;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .number {
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .task-line {
+      height: 27px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .water-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px 8px;
+      margin-top: 16px;
+    }
+
+    .water {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .habit-row {
+      display: grid;
+      grid-template-columns: 1fr 34px;
+      gap: 10px;
+      align-items: end;
+      margin: 12px 0;
+    }
+
+    .habit-row .task-line { height: 30px; }
+
+    .habit-check {
+      width: 20px;
+      height: 20px;
+      margin: auto;
+      border: 1.5px solid #829398;
+      border-radius: 4px;
+    }
+
+    .reflection { margin-top: 18px; }
+
+    .reflection .blank { margin-bottom: 8px; }
+
+    .print-button {
+      display: block;
+      margin: 18px auto 0;
+      padding: 11px 20px;
+      border: 0;
+      border-radius: 6px;
+      background: var(--accent);
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 24px 18px; }
+      .grid { grid-template-columns: 1fr; }
+      .date-row { gap: 14px; }
+      h1 { font-size: 23px; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 12mm; }
+
+      body {
+        padding: 0;
+        background: white;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .page {
+        max-width: none;
+        min-height: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      .print-button { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>📝 Daily Productivity &amp; Habit Journal</h1>
+      <p class="subtitle">A simple dashboard for a focused, balanced day.</p>
+
+      <div class="date-row">
+        <div class="write-line"><span>Date:</span></div>
+        <div class="write-line"><span>Day:</span></div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section>
+        <h2>☀️ Morning Routine</h2>
+        <div class="check-item"><span class="box"></span> Wake up on time</div>
+        <div class="check-item"><span class="box"></span> Make bed</div>
+        <div class="check-item"><span class="box"></span> Stretch or move</div>
+        <div class="check-item"><span class="box"></span> Drink water</div>
+        <div class="check-item"><span class="box"></span> Review today’s priorities</div>
+        <div class="check-item"><span class="box"></span> Other: __________________</div>
+
+        <div class="intention">
+          <strong>Today’s intention</strong>
+          <div class="blank"></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>🎯 Top Priorities</h2>
+        <div class="priority"><span class="number">1</span><div class="task-line"></div></div>
+        <div class="priority"><span class="number">2</span><div class="task-line"></div></div>
+        <div class="priority"><span class="number">3</span><div class="task-line"></div></div>
+
+        <strong>Other tasks</strong>
+        <div class="check-item"><span class="box"></span> ________________________</div>
+        <div class="check-item"><span class="box"></span> ________________________</div>
+        <div class="check-item"><span class="box"></span> ________________________</div>
+      </section>
+
+      <section>
+        <h2>💧 Water Tracker</h2>
+        <p>Mark a box for each glass. Aim for your personal daily goal.</p>
+        <div class="water-grid">
+          <div class="water"><span class="box"></span> 1</div>
+          <div class="water"><span class="box"></span> 2</div>
+          <div class="water"><span class="box"></span> 3</div>
+          <div class="water"><span class="box"></span> 4</div>
+          <div class="water"><span class="box"></span> 5</div>
+          <div class="water"><span class="box"></span> 6</div>
+          <div class="water"><span class="box"></span> 7</div>
+          <div class="water"><span class="box"></span> 8</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>🌱 Habit Tracker</h2>
+        <div class="habit-row"><div class="task-line"></div><div class="habit-check"></div></div>
+        <div class="habit-row"><div class="task-line"></div><div class="habit-check"></div></div>
+        <div class="habit-row"><div class="task-line"></div><div class="habit-check"></div></div>
+        <div class="habit-row"><div class="task-line"></div><div class="habit-check"></div></div>
+      </section>
+    </div>
+
+    <section class="reflection">
+      <h2>🌙 End-of-Day Reflection</h2>
+      <strong>One thing I’m proud of</strong>
+      <div class="blank"></div>
+      <strong>What could I improve tomorrow?</strong>
+      <div class="blank"></div>
+      <strong>Tomorrow’s first priority</strong>
+      <div class="blank"></div>
+    </section>
+
+    <button class="print-button" onclick="window.print()">Print / Save as PDF</button>
+  </main>
+</body>
+</html>
